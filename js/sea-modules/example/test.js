@@ -1,0 +1,1 @@
+define("example/test",["$","./util"],function(e){var t=e("$"),n=e("./util");t("#wrap").html(n.getText("test"))}),define("example/util",[],function(e,t){t.getText=function(e){switch(e){case"index":return"这是 index 页面";case"test":return"这是 test 页面"}}});
