@@ -1,4 +1,9 @@
 module.exports = function (grunt) {
+    var transport = require('grunt-cmd-transport');
+    var style = transport.style.init(grunt);
+    var text = transport.text.init(grunt);
+    var script = transport.script.init(grunt);
+
     grunt.initConfig({
         clean : {
             spm : ['.build'],
@@ -7,7 +12,12 @@ module.exports = function (grunt) {
         transport : {
             spm : {
                 options : {
-                    idleading : 'example/'
+                    idleading : 'example/',
+                    parsers : {
+                        '.js' : [script.jsParser],
+                        '.css' : [style.css2jsParser],
+                        '.html' : [text.html2jsParser]
+                    }
                 },
                 files : [
                     {

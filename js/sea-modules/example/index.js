@@ -1,1 +1,1 @@
-define("example/index",["./util"],function(e){var t=e("./util");alert(t.getText("index"))}),define("example/util",[],function(e,t){t.getText=function(e){switch(e){case"index":return"这是 index 页面";case"test":return"这是 test 页面"}}});
+define("example/index",["./util","./style.css"],function(e){var t=e("./util");e("./style.css"),alert(t.getText("index"))}),define("example/util",[],function(e,t){t.getText=function(e){switch(e){case"index":return"这是 index 页面";case"test":return"这是 test 页面"}}}),define("example/style.css",[],function(){seajs.importStyle("body{background:gray}")});
